@@ -15,6 +15,7 @@ public class ItemMapper implements RowMapper {
         item.setPlaceLocation(rs.getString("Location"));
         item.setWorkingDays(rs.getString("Working_Days"));
         item.setAverageRating(rs.getFloat("Average_Rating"));
+        item.setTicketPrice(rs.getString("Ticket_Price"));
         item.setPlaceImage(rs.getString("Image"));
 
         return item;

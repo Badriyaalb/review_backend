@@ -6,7 +6,8 @@ public class Item {
     String PlaceName;
     String PlaceLocation;
     String WorkingDays;
-    Float AverageRating;
+    String ticketPrice;
+    Float  AverageRating;
     String PlaceImage;
    
 // place Name
@@ -35,6 +36,17 @@ public class Item {
     public void setWorkingDays(String WorkingDays){
        this.WorkingDays = WorkingDays;
     }
+
+// Ticket Price
+
+public String getticketPrice(){
+    return ticketPrice;
+}
+
+public void setTicketPrice(String ticketPrice){
+    this.ticketPrice = ticketPrice;
+}
+
 // average Rating
     public Float getAverageRating(){
         return AverageRating;
@@ -44,7 +56,7 @@ public class Item {
        this.AverageRating = AverageRating;
     }
 // place image
-    public String PlaceImage(){
+    public String getPlaceImage(){
         return PlaceImage;
     }
 

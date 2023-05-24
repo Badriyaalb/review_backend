@@ -3,6 +3,7 @@ package com.example.review_backend;
 
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -17,8 +18,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 @RestController
-
 @CrossOrigin(origins = "*")  
+
 public class PlaceListController{
     
     @Autowired  
@@ -36,5 +37,13 @@ public class PlaceListController{
             jdbc.execute("INSERT INTO `sys`.`place_review` (`Name`, `Comment`) VALUES ('"+Username+"', '"+Userreview+"')");
             
             return"data inserted Successfully"; 
-       
+
+    }
+    
+    @RequestMapping(path = "/getplaces", method = RequestMethod.GET)
+    public List<Item> getItems() throws IOException{
+        List<Item> items = jdbc.query("SELECT * FROM `sys`.`place_details`", new ItemMapper());
+        return items;
+    }
+
 }
