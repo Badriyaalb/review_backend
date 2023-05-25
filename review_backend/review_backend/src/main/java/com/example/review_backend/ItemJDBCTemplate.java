@@ -16,7 +16,7 @@ public class ItemJDBCTemplate implements ItemDAO{
         this.myTemplate = new JdbcTemplate((dataSource));
     }
 
-    public List<Item> allItems(){
+    public List<Item> allPlaces(){
         String fetchItems = "SELECT * FROM `sys`.`all_items`";
         List<Item> items = myTemplate.query(fetchItems, new ItemMapper());
         return items;
